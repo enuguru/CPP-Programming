@@ -1,0 +1,13 @@
+
+
+Introduction to C++
+
+C++ is a general purpose programming language with a bias towards system programming. This is still true. What has changed over the years is an increase in the importance, power and flexibility of C++'s abstraction mechanisms:
+
+So we can say that 
+
+C++ is a general-purpose programming language providing a direct and efficient model of hardware combined with facilities for defining lightweight abstractions
+
+Still terser,
+
+C++ is a language for developing and using elegant and efficient abstractions
