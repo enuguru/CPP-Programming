@@ -1,0 +1,135 @@
+
+
+function template
+<algorithm>
+std::partial_sort_copy
+default (1)	
+
+template <class InputIterator, class RandomAccessIterator>
+  RandomAccessIterator
+    partial_sort_copy (InputIterator first,InputIterator last,
+                       RandomAccessIterator result_first,
+                       RandomAccessIterator result_last);
+
+custom (2)	
+
+template <class InputIterator, class RandomAccessIterator, class Compare>
+  RandomAccessIterator
+    partial_sort_copy (InputIterator first,InputIterator last,
+                       RandomAccessIterator result_first,
+                       RandomAccessIterator result_last, Compare comp);
+
+Copy and partially sort range
+Copies the smallest elements in the range [first,last) to [result_first,result_last), sorting the elements copied. The number of elements copied is the same as the distance between result_first and result_last (unless this is more than the amount of elements in [first,last)).
+
+The range [first,last) is not modified.
+
+The elements are compared using operator< for the first version, and comp for the second.
+
+Parameters
+
+first, last
+    Input iterators to the initial and final positions of the sequence to copy from. The range used is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
+    InputIterator shall point to a type assignable to the elements pointed by RandomAccessIterator.
+result_first, result_last
+    Random-access iterators to the initial and final positions of the destination sequence. The range used is [result_first,result_last).
+    RandomAccessIterator shall point to a type for which swap is properly defined and which is both move-constructible and move-assignable.
+comp
+    Binary function that accepts two elements in the result range as arguments, and returns a value convertible to bool. The value returned indicates whether the element passed as first argument is considered to go before the second in the specific strict weak ordering it defines.
+    The function shall not modify any of its arguments.
+    This can either be a function pointer or a function object.
+
+
+Return value
+An iterator pointing to the element that follows the last element written in the result sequence.
+
+Example
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+
+	
+
+// partial_sort_copy example
+#include <iostream>     // std::cout
+#include <algorithm>    // std::partial_sort_copy
+#include <vector>       // std::vector
+
+bool myfunction (int i,int j) { return (i<j); }
+
+int main () {
+  int myints[] = {9,8,7,6,5,4,3,2,1};
+  std::vector<int> myvector (5);
+
+  // using default comparison (operator <):
+  std::partial_sort_copy (myints, myints+9, myvector.begin(), myvector.end());
+
+  // using function as comp
+  std::partial_sort_copy (myints, myints+9, myvector.begin(), myvector.end(), myfunction);
+
+  // print out content:
+  std::cout << "myvector contains:";
+  for (std::vector<int>::iterator it=myvector.begin(); it!=myvector.end(); ++it)
+    std::cout << ' ' << *it;
+  std::cout << '\n';
+
+  return 0;
+}
+
+	
+Edit & Run
+
+
+Output:
+
+myvector contains: 1 2 3 4 5
+
+
+Complexity
+On average, less than linearithmic in the distance between first and last: Performs approximately N*log(min(N,M)) comparisons of elements (where N is this distance, and M is the distance between result_first and result_last). It also performs up to that many element swaps (or moves) and min(N,M) assignments between ranges.
+
+Data races
+The objects in the range [first,last) are modified.
+
+Exceptions
+Throws if any of the element comparisons, the element assignments, the element swaps (or moves) or the operations on iterators throws.
+Note that invalid arguments cause undefined behavior.
+
+See also
+
+partial_sort
+    Partially sort elements in range (function template )
+
+sort
+    Sort elements in range (function template )
+
+copy
+    Copy range of elements (function template )
+
+remove_copy_if
+    Copy range removing values (function template )
+
+

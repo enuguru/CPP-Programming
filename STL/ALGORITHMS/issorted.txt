@@ -1,0 +1,118 @@
+
+function template
+<algorithm>
+std::is_sorted
+default (1)	
+
+template <class ForwardIterator>
+  bool is_sorted (ForwardIterator first, ForwardIterator last);
+
+custom (2)	
+
+template <class ForwardIterator, class Compare>
+  bool is_sorted (ForwardIterator first, ForwardIterator last, Compare comp);
+
+Check whether range is sorted
+Returns true if the range [first,last) is sorted into ascending order.
+
+The elements are compared using operator< for the first version, and comp for the second.
+
+The behavior of this function template is equivalent to:
+
+template <class ForwardIterator>
+  bool is_sorted (ForwardIterator first, ForwardIterator last)
+{
+  if (first==last) return true;
+  ForwardIterator next = first;
+  while (++next!=last) {
+    if (*next<*first)     // or, if (comp(*next,*first)) for version (2)
+      return false;
+    ++first;
+  }
+  return true;
+}
+
+
+Parameters
+
+first, last
+    Forward iterators to the initial and final positions of the sequence. The range checked is [first,last), 
+which contains all the elements between first and last, including the element pointed by first but not the 
+element pointed by last.
+comp
+    Binary function that accepts two elements in the range as arguments, and returns a value convertible to 
+bool. The value returned indicates whether the element passed as first argument is considered to go before 
+the second in the specific strict weak ordering it defines.
+    The function shall not modify any of its arguments.
+    This can either be a function pointer or a function object.
+
+
+Return value
+true if the range [first,last) is sorted into ascending order, false otherwise.
+
+If the range [first,last) contains less than two elements, the function always returns true.
+
+Example
+
+// is_sorted example
+#include <iostream>     // std::cout
+#include <algorithm>    // std::is_sorted, std::prev_permutation
+#include <array>        // std::array
+
+int main () {
+  std::array<int,4> foo {2,4,1,3};
+
+  do {
+    // try a new permutation:
+    std::prev_permutation(foo.begin(),foo.end());
+
+    // print range:
+    std::cout << "foo:";
+    for (int& x:foo) std::cout << ' ' << x;
+    std::cout << '\n';
+
+  } while (!std::is_sorted(foo.begin(),foo.end()));
+
+  std::cout << "the range is sorted!\n";
+
+  return 0;
+}
+
+Output:
+
+foo: 2 3 4 1
+foo: 2 3 1 4
+foo: 2 1 4 3
+foo: 2 1 3 4
+foo: 1 4 3 2
+foo: 1 4 2 3
+foo: 1 3 4 2
+foo: 1 3 2 4
+foo: 1 2 4 3
+foo: 1 2 3 4
+the range is sorted!
+
+
+Complexity
+Up to linear in one less than the distance between first and last: Compares pairs of elements until a 
+mismatch is found.
+
+Data races
+The objects in the range [first,last) are accessed.
+
+Exceptions
+Throws if either an element comparison or an operation on an iterator throws.
+Note that invalid arguments cause undefined behavior.
+
+See also
+
+is_sorted_until
+    Find first unsorted element in range (function template )
+
+sort
+    Sort elements in range (function template )
+
+partial_sort
+    Partially sort elements in range (function template )
+
+

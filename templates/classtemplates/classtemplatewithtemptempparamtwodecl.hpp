@@ -1,0 +1,15 @@
+
+
+template <typename T, template <typename ELEM> class CONT = std::deque >
+class Stack {
+  private:
+    CONT<T> elems;         // elements
+
+  public:
+    void push(T const&);   // push element
+    void pop();            // pop element
+    T top() const;         // return top element
+    bool empty() const {   // return whether the stack is empty
+        return elems.empty();
+    }
+};

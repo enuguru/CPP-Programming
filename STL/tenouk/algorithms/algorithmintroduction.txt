@@ -1,0 +1,17 @@
+
+
+
+We have covered containers and iterators, now we are going to complete our discussion by introducing algorithms.
+
+We create data structure by using containers, and then we use iterators to traverse, iterate or explore the data structure.  During the iteration we will use algorithm, a set of rules that actually defined what to do to the data structure: sorting, searching, re-ordering etc.
+
+The STL provides several standard algorithms for the processing of elements of collections.
+
+These algorithms offer general fundamental services, such as searching, sorting, copying, reordering, modifying, and numerical processing, so that no need for us to start developing program portions or routines from scratch.  Furthermore they have been tested and your task is to learn how to use these ‘creatures’ effectively.
+
+Algorithms are global functions that operate with iterators; hence, all algorithms can be implemented once for any container type. The algorithm might even operate on elements of different container types. Furthermore you can also use the algorithms for user-defined container types.
+
+    Keep in mind that in the previous tutorials on containers and iterators, there are many standard algorithms have been introduced.
+
+    Let's start with a simple example on the use of STL algorithms. Consider the following program:
+

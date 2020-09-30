@@ -1,0 +1,29 @@
+
+size
+
+Size is not allowed to differ between multiple compilers. The size of a vector is the number of 
+elements that it contains, which is directly controlled by how many elements you put into the vector.
+
+capacity
+
+Capacity is the amount of space that the vector is currently using. Under the hood, a vector just 
+uses an array. The capacity of the vector is the size of that array. This is always equal to or 
+larger than the size. The difference between them is the number of elements that you can add to the 
+vector before the array under the hood needs to be reallocated.
+
+You should almost never care about the capacity. It exists to let people with very specific performance 
+and memory constraints do exactly what they want
+
+maximum size of a vector
+
+Theoretical limit for your system you can get with a function vector<T>::max_size(). For instance:
+
+vector<int> vec;
+std::cout<<vec.max_size()<<std::endl;//prints max size for vector<int> in your system!
+
+
+However in practice the vector's allocated array must be in one consecutive memory block and even 
+with less size memory allocation can fail. If you are going to use vector of ints with million elements,
+I think you shouldn't have any problems. However for bigger objects it can be problematic.
+
+so theoritically there is no limit but the available memory in our system

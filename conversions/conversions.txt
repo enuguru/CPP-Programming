@@ -1,0 +1,34 @@
+
+
+You can use three techniques in conversion from one data type to another.
+
+1. Conversion functions or typecast operator in the source class
+
+2. One argument constructor in the destination class
+
+3. Assignment operator in the destination class
+
+
+there are four conversion types possible
+
+1. Built in type to user defined type class type
+
+2. user defined class type to Built in type
+
+3. user defined type to user defined type
+
+4. Built in type to Built in type
+
+for c to c (user defined to user deined or class to class) we can any of the three techniques
+given above.
+
+for user defined to built in we can only use typecast operator or conversion function in the
+source class. this is because we cannot touch the destionation class because they are built in
+(that code is in the compiler)
+
+for built in to user defined again we can use two of the three techniuqes possible given above
+this is because typecast operator can be only in source class but the source class here is the
+built in type whose code we cannot touch (it is in the compiler)
+
+the conversion from built in to built in can be done with the help of static_cast, dynamic_cast,
+const_cast, reinterpret_cast.

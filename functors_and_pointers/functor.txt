@@ -1,0 +1,18 @@
+
+
+Functors are functions with a state. 
+
+In C++ you can realize them as a class with one or more private members to store the 
+state and with an overloaded operator () to execute the function. 
+
+Functors can encapsulate C and C++ function pointers employing the concepts templates and 
+polymorphism. You can build up a list of pointers to member functions of arbitrary classes 
+and call them all through the same interface without bothering about their class or the 
+need of a pointer to an instance. 
+
+All the functions just have got to have the same return-type and calling parameters. Sometimes 
+functors are also known as closures. 
+
+You can also use functors to implement callbacks.
+
+

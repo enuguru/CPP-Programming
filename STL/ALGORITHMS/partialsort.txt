@@ -1,0 +1,131 @@
+
+
+
+function template
+<algorithm>
+std::partial_sort
+default (1)	
+
+template <class RandomAccessIterator>
+  void partial_sort (RandomAccessIterator first, RandomAccessIterator middle,
+                     RandomAccessIterator last);
+
+custom (2)	
+
+template <class RandomAccessIterator, class Compare>
+  void partial_sort (RandomAccessIterator first, RandomAccessIterator middle,
+                     RandomAccessIterator last, Compare comp);
+
+Partially sort elements in range
+Rearranges the elements in the range [first,last), in such a way that the elements before middle are the smallest elements in the entire range and are sorted in ascending order, while the remaining elements are left without any specific order.
+
+The elements are compared using operator< for the first version, and comp for the second.
+
+Parameters
+
+first, last
+    Random-access iterators to the initial and final positions of the sequence to be partially sorted. The range used is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
+    Notice that in this function these are not consecutive parameters, but the first and the third.
+middle
+    Random-access iterator pointing to the element within the range [first,last) that is used as the upper boundary of the elements that are fully sorted.
+comp
+    Binary function that accepts two elements in the range as arguments, and returns a value convertible to bool. The value returned indicates whether the element passed as first argument is considered to go before the second in the specific strict weak ordering it defines.
+    The function shall not modify any of its arguments.
+    This can either be a function pointer or a function object.
+
+
+RandomAccessIterator shall point to a type for which swap is properly defined and which is both move-constructible and move-assignable.
+
+Return value
+none
+
+Example
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+
+	
+
+// partial_sort example
+#include <iostream>     // std::cout
+#include <algorithm>    // std::partial_sort
+#include <vector>       // std::vector
+
+bool myfunction (int i,int j) { return (i<j); }
+
+int main () {
+  int myints[] = {9,8,7,6,5,4,3,2,1};
+  std::vector<int> myvector (myints, myints+9);
+
+  // using default comparison (operator <):
+  std::partial_sort (myvector.begin(), myvector.begin()+5, myvector.end());
+
+  // using function as comp
+  std::partial_sort (myvector.begin(), myvector.begin()+5, myvector.end(),myfunction);
+
+  // print out content:
+  std::cout << "myvector contains:";
+  for (std::vector<int>::iterator it=myvector.begin(); it!=myvector.end(); ++it)
+    std::cout << ' ' << *it;
+  std::cout << '\n';
+
+  return 0;
+}
+
+	
+Edit & Run
+
+
+Possible output:
+
+myvector contains: 1 2 3 4 5 9 8 7 6
+
+
+Complexity
+On average, less than linearithmic in the distance between first and last: Performs approximately N*log(M) comparisons of elements (where N is this distance, and M is the distance between first and middle). It also performs up to that many element swaps (or moves).
+
+Data races
+The objects in the range [first,last) are modified.
+
+Exceptions
+Throws if any of the element comparisons, the element swaps (or moves) or the operations on iterators throws.
+Note that invalid arguments cause undefined behavior.
+
+See also
+
+sort
+    Sort elements in range (function template )
+
+stable_sort
+    Sort elements preserving order of equivalents (function template )
+
+search
+    Search range for subsequence (function template )
+
+reverse
+    Reverse range (function template )
+
+

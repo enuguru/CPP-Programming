@@ -1,0 +1,29 @@
+
+
+example of function object
+
+This creates a functor class with a constructor that takes an integer argument and saves it. 
+When objects of the class are "called", it will return the result of adding the saved value 
+and the argument to the functor:
+
+ 
+class myFunctorClass
+{
+    public:
+        myFunctorClass (int x) : _x( x ) {}
+        int operator() (int y) { return _x + y; }
+    private:
+        int _x;
+};
+
+ 
+int main()
+{
+    myFunctorClass addFive( 5 );
+    std::cout << addFive( 6 );
+ 
+    return 0;
+}
+
+In short, the act of constructing an object lets you give the functor information that it can 
+use inside the implementation of its function-like behavior (when the functor is called through operator()).

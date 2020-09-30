@@ -1,0 +1,7 @@
+
+
+g++ defaults to -std=gnu++98 for C++, which is the decades old C++98-standard enhanced with GNU extensions (most of which are conformant).
+
+Choose the proper revision: -std=c++1y -pedantic is a very close approximation to C++14
+
+g++ -g -std=c++14 one.cpp -o one

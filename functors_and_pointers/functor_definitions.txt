@@ -1,0 +1,21 @@
+
+definitions of functors
+
+unlike a function pointer a functor can hold state
+
+functors are functions with a state
+
+The functor is just a class where the function call operator is overloaded
+
+It is faster than using a function pointer
+
+because functors can hold state it can be customizable, you customize 
+it when you create an object of the class
+
+the function inside the functor class can be overloaded
+
+because functors are objects of a class they can be conveniently 
+passed to templates, other functions etc
+
+since they can be passed on to other functions and hold state 
+information functors are like closures

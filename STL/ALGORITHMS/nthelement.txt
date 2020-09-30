@@ -1,0 +1,114 @@
+
+function template
+<algorithm>
+std::nth_element
+default (1)	
+
+template <class RandomAccessIterator>
+  void nth_element (RandomAccessIterator first, RandomAccessIterator nth,
+                    RandomAccessIterator last);
+
+custom (2)	
+
+template <class RandomAccessIterator, class Compare>
+  void nth_element (RandomAccessIterator first, RandomAccessIterator nth,
+                    RandomAccessIterator last, Compare comp);
+
+Sort element in range
+Rearranges the elements in the range [first,last), in such a way that the element at the nth position is 
+the element that would be in that position in a sorted sequence.
+
+The other elements are left without any specific order, except that none of the elements preceding nth 
+are greater than it, and none of the elements following it are less.
+
+The elements are compared using operator< for the first version, and comp for the second.
+
+Parameters
+
+first, last
+    Random-access iterators to the initial and final positions of the sequence to be used. The range used 
+is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
+    Notice that in this function, these are not consecutive parameters, but the first and the third.
+nth
+
+        C++11
+        C++14
+
+    Random-access iterator pointing to the location within the range [first,last) that will contain the 
+sorted element.
+    Notice that the value of the element pointed by nth before the call is not relevant.
+comp
+    Binary function that accepts two elements in the range as arguments, and returns a value convertible to bool. The value returned indicates whether the element passed as first argument is considered to go before the second in the specific strict weak ordering it defines.
+    The function shall not modify any of its arguments.
+    This can either be a function pointer or a function object.
+
+
+Return value
+none
+
+Example
+
+// nth_element example
+#include <iostream>     // std::cout
+#include <algorithm>    // std::nth_element, std::random_shuffle
+#include <vector>       // std::vector
+
+bool myfunction (int i,int j) { return (i<j); }
+
+int main () {
+  std::vector<int> myvector;
+
+  // set some values:
+  for (int i=1; i<10; i++) myvector.push_back(i);   // 1 2 3 4 5 6 7 8 9
+
+  std::random_shuffle (myvector.begin(), myvector.end());
+
+  // using default comparison (operator <):
+  std::nth_element (myvector.begin(), myvector.begin()+5, myvector.end());
+
+  // using function as comp
+  std::nth_element (myvector.begin(), myvector.begin()+5, myvector.end(),myfunction);
+
+  // print out content:
+  std::cout << "myvector contains:";
+  for (std::vector<int>::iterator it=myvector.begin(); it!=myvector.end(); ++it)
+    std::cout << ' ' << *it;
+  std::cout << '\n';
+
+  return 0;
+}
+
+	
+Edit & Run
+
+
+Possible output:
+
+myvector contains: 3 1 4 2 5 6 9 7 8
+
+
+Complexity
+On average, linear in the distance between first and last: Compares elements, and possibly swaps (or moves) them, until the elements are properly rearranged.
+
+Data races
+The objects in the range [first,last) are modified.
+
+Exceptions
+Throws if any of the element comparisons, the element swaps (or moves) or the operations on iterators throws.
+Note that invalid arguments cause undefined behavior.
+
+See also
+
+sort
+    Sort elements in range (function template )
+
+partial_sort
+    Partially sort elements in range (function template )
+
+partition
+    Partition range in two (function template )
+
+find_if
+    Find element in range (function template )
+
+

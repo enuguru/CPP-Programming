@@ -1,0 +1,41 @@
+
+
+What is a functor or function object?
+
+Any class that overloads the function call operator that is "operator()" is a functor class. Objects created from such classes are known as function objects or functors.
+
+struct Point 
+{
+	Point(double initX, double initY): x(initX), y(initY) { }
+	double x, y;
+};
+
+list<Point> Ip;
+Point avg = II average the points in Ip
+accumulate( Ip.beginO, Ip.endO,Point(0,0),PointAverage());
+/* the above line calls the function object
+
+
+class PointAverage: public binary-function<Point, Point, Point>
+{
+public:
+
+PointAverage(): xSum(O), ySum(O), numPoints(O) { }
+
+/* here we are overloading the function call operator */
+/* this function is overloading the function call operator and 
+/* this belongs to the PointAverage class, it is called as PointAverage() */
+const Point operator()(const Point& avgSoFar, const Point& p)
+{
+	++numPoints;
+	xSum += p.x;
+	ySum += p.y;
+	return Point(xSum/numPoints, ySum/numPoints);
+}
+
+private:
+size_t numPoints;
+double xSum;
+double ySum;
+};
+

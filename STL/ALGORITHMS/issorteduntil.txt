@@ -1,0 +1,167 @@
+
+
+
+function template
+<algorithm>
+std::is_sorted_until
+default (1)	
+
+template <class ForwardIterator>
+  ForwardIterator is_sorted_until (ForwardIterator first, ForwardIterator last);
+
+custom (2)	
+
+template <class ForwardIterator, class Compare>
+  ForwardIterator is_sorted_until (ForwardIterator first, ForwardIterator last,
+                                   Compare comp);
+
+Find first unsorted element in range
+Returns an iterator to the first element in the range [first,last) which does not follow an ascending order.
+
+The range between first and the iterator returned is sorted.
+
+If the entire range is sorted, the function returns last.
+
+The elements are compared using operator< for the first version, and comp for the second.
+
+The behavior of this function template is equivalent to:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+
+	
+
+template <class ForwardIterator>
+  ForwardIterator is_sorted_until (ForwardIterator first, ForwardIterator last)
+{
+  if (first==last) return first;
+  ForwardIterator next = first;
+  while (++next!=last) {
+    if (*next<*first) return next;
+    ++first;
+  }
+  return last;
+}
+
+	
+
+
+Parameters
+
+first, last
+    Forward iterators to the initial and final positions in a sequence. The range checked is [first,last), which contains all the elements between first and last, including the element pointed by first but not the element pointed by last.
+comp
+    Binary function that accepts two elements in the range as arguments, and returns a value convertible to bool. The value returned indicates whether the element passed as first argument is considered to go before the second in the specific strict weak ordering it defines.
+    The function shall not modify any of its arguments.
+    This can either be a function pointer or a function object.
+
+
+Return value
+An iterator to the first element in the range which does not follow an ascending order, or last if all elements are sorted or if the range contains less than two elements.
+
+Example
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+
+	
+
+// is_sorted_until example
+#include <iostream>     // std::cout
+#include <algorithm>    // std::is_sorted_until, std::prev_permutation
+#include <array>        // std::array
+
+int main () {
+  std::array<int,4> foo {2,4,1,3};
+  std::array<int,4>::iterator it;
+
+  do {
+    // try a new permutation:
+    std::prev_permutation(foo.begin(),foo.end());
+
+    // print range:
+    std::cout << "foo:";
+    for (int& x:foo) std::cout << ' ' << x;
+    it=std::is_sorted_until(foo.begin(),foo.end());
+    std::cout << " (" << (it-foo.begin()) << " elements sorted)\n";
+
+  } while (it!=foo.end());
+
+  std::cout << "the range is sorted!\n";
+
+  return 0;
+}
+
+	
+Edit & Run
+
+
+Output:
+
+foo: 2 3 4 1 (3 elements sorted)
+foo: 2 3 1 4 (2 elements sorted)
+foo: 2 1 4 3 (1 elements sorted)
+foo: 2 1 3 4 (1 elements sorted)
+foo: 1 4 3 2 (2 elements sorted)
+foo: 1 4 2 3 (2 elements sorted)
+foo: 1 3 4 2 (3 elements sorted)
+foo: 1 3 2 4 (2 elements sorted)
+foo: 1 2 4 3 (3 elements sorted)
+foo: 1 2 3 4 (4 elements sorted)
+the range is sorted!
+
+
+Complexity
+Up to linear in the distance between first and last: Calls comp for each element until a mismatch is found.
+
+Data races
+Some (or all) of the objects in the range [first,last) are accessed (once at most).
+
+Exceptions
+Throws if either comp or an operation on an iterator throws.
+Note that invalid parameters cause undefined behavior.
+
+See also
+
+is_sorted
+    Check whether range is sorted (function template )
+
+sort
+    Sort elements in range (function template )
+
+find_if
+    Find element in range (function template )
+
+
