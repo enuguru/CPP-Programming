@@ -1,0 +1,14 @@
+
+
+why do we use #include <iostream> at the top of C++ files ?
+
+iostream is the predefined library function used for input and output, called as header files.
+
+iostream is the header file which contains all the functions of program like cout, cin etc. and #include tells the preprocessor to include these header file in the program.
+
+include <iostream.h>
+#include is known as a preprocessor directive,which is used to load files…
+
+<> indicate the start and end of file name to be loaded.. you can use " " quotes too instead of <>
+<> are for header files(files with extension .h)
+"" for c files (files with extension .c)

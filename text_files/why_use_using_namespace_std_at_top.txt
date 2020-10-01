@@ -1,0 +1,28 @@
+
+
+
+why do we use using namespace std; in c++ files at the top?
+
+using namespace std; 
+pulls everything defined in the std namespace into the global namespace, as if it had not been defined inside a namespace at all. This makes it more convenient to access things that are defined in the std namespace, without having to use the scope resolution operator to qualify them. So, instead of having to say:
+
+std::cout << myValue << std::endl; 
+you can just say:
+
+cout << myValue << endl; 
+However…
+
+While this practice is okay for academic exercises, short example code, or trivial programs, pulling in the entire std namespace into the global namespace is not a good habit to get into in real-world production code, because it defeats the purpose of namespaces and can lead to name collisions. (Even if there are initially no name collisions, they can crop up during maintenance as more code, libraries, etc. are added to the project.) This situation is commonly referred to as namespace pollution. Many coding standards forbid this type of wholesale pollution.
+
+A better practice in production code is to either (a) use the fully-qualified names, as in the first example above, or (b) pull in only those individual names you need to use (not the entire namespace) at the scope where you need them. For example:
+
+int myFn(void) 
+{ 
+	using std::cout; 
+	using std::endl; 
+ 
+	//... 
+	cout << myValue << endl; 
+	//... 
+} 
+If you do this, do it only this within limited scopes where you need these names, not out at the namespace level.
