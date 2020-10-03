@@ -1,0 +1,60 @@
+
+bool
+int
+short int
+long int
+long long it
+
+unsigned int
+unsigned short int
+unsigned long int
+unsigned long long int
+
+
+float
+double
+long double
+
+char
+signed char
+unsigned char
+char_16
+char_32
+wchar
+
+enum
+struct
+struct bit fields
+union
+
+enum
+union
+struct
+class
+struct enum
+struct bit fields
+
+pointer types
+
+char *
+int *
+float *
+double *
+pointer to an array
+pointer to a strucuture
+pointer to a object
+ptr to a ptr
+void *
+pointer to a function
+
+
+const pointer const data -      const int const *x = 10;
+variable pointer const data     const int *x = 10;
+const pointer variable data     int const *x = 10;
+variable pointer variable data  int *x = &a;
+
+reference
+functors
+clojures
+string
+

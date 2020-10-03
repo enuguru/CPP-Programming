@@ -1,0 +1,61 @@
+
+
+there is a singly linked list which is already built
+you know the address of a node in that linked list
+delete that node in O(1) time
+
+find the maximum element in a stack at every node
+in the stack
+
+23 8 45 31 30 100 12 1
+
+
+handling bits in C language
+
+find the numbers of bits in integer on your computer
+using C++ or C
+do not use sizeof operator
+
+print a number as a sequence of bits
+7
+0000 0111
+12 
+0000 1100
+
+
+
+
+
+
+
+
+
+1
+11
+21
+12117
+111221
+312211
+13112221
+
+convert the excel column ids to decimal
+
+
+#include <iostream>
+using namespace std;
+#include <bits/stdc++.h> 
+#include<string>
+#include<math.h>
+int main()
+{
+    string n="CBD";
+    int ans=0,j=0;
+    int l=n.length();
+    for(int i=l;i>0;i--)
+    {
+        ans=ans+ (n[i]-"A"*pow(26,j));
+        j++;
+    }
+    cout << "decimal vale for CBD-- "<<ans;
+    return 0;
+}

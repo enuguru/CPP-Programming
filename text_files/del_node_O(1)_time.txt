@@ -1,0 +1,10 @@
+
+
+
+NODE *delnode;
+NODE *temp (NODE *)malloc(sizeof(NODE));
+temp = delnode;
+newtemp = temp - > next;
+temp -> data = temp -> next -> data;
+temp -> next = temp -> next -> next;
+free(newtemp)

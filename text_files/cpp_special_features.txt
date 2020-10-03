@@ -1,0 +1,6 @@
+
+
+1. object oriented programming - design patterns in C++
+2. C++ having more abstractions
+3. templates in C++ - generic programming
+4. STL - Standard Template Library in C++ 
