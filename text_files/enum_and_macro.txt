@@ -1,0 +1,8 @@
+
+
+enum obey scope rules whereas #defines have a global scope 
+
+enums get automatically assigned
+
+enums are detected at compilation stage whereas the #defines are not visible 
+after pre-processing,  this helps in debugging better as the variable is visible for the debugger
