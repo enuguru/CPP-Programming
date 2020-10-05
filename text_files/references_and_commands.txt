@@ -18,4 +18,9 @@ https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf
 G++ compiler download for windows 10
 https://sourceforge.net/projects/mingw-w64/
 
+min gw exe
+https://sourceforge.net/projects/mingw/
+from 9246114_SurajDharDubey to everyone:    11:30 AM
+https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download
+
 
