@@ -1,0 +1,21 @@
+
+
+g++ -std=c++11 your_file.cpp -o your_program
+
+g++ -std=c++14 your_file.cpp -o your_program
+
+
+C++ enum class or enum struct
+
+http://candcplusplus.com/c11-scoped-enumeration
+
+simple c style enum
+https://www.geeksforgeeks.org/enumeration-enum-c/
+
+gdb commands
+https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf
+
+G++ compiler download for windows 10
+https://sourceforge.net/projects/mingw-w64/
+
+

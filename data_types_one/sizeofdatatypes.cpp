@@ -1,6 +1,6 @@
 
+// C++ program to find sizes of data types 
 
-// C++ program to sizes of data types 
 #include<iostream> 
 using namespace std; 
 
