@@ -1,0 +1,47 @@
+
+
+
+1. given any number find the parity of bits
+
+2. find the parity in less than O(n) time where
+   n is the number of bits
+
+3. find the parity of any number in O(1) time
+
+
+
+13
+
+00000000 00000000 00000000 00001101
+
+
+
+
+Big(O) notations
+----------------
+
+O(1)
+O(logn)
+O(n)
+O(nlogn)
+O(n^2)
+O(n^3)
+O(2^n)
+O(x^n)
+O(n!)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

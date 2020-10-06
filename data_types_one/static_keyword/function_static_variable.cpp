@@ -8,7 +8,7 @@ using namespace std;
 void demo() 
 { 
 	// static variable 
-	static int count = 0; 
+	int count = 10; 
 	cout << count << " "; 
 	
 	// value is updated and 
@@ -16,6 +16,8 @@ void demo()
 	// function calls 
 	count++; 
 } 
+
+// value persistence
 
 int main() 
 { 

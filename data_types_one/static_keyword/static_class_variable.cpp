@@ -8,7 +8,7 @@ public:
     static int s_value;
 };
  
-int Something::s_value{ 1 };
+int Something::s_value { 1 };
  
 int main()
 {
