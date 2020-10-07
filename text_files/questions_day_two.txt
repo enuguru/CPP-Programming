@@ -71,7 +71,3 @@ Pass a function as a parameter to another function
 
 Question 7:
 2. can you declare a function with in one function in C++ ?
-
-
-
-

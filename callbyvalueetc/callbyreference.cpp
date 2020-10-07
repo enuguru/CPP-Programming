@@ -6,7 +6,7 @@ void myfunction(int &x, int &y)   //  function definition
 {
   int s,z; s = 67; z = 45;  
   x = 10;   y = 20;   //  original value can be changed
-  x  =  &s;  y  =  &z;   //  x and y cannot be made to point to 
+  //x  =  &s;  y  =  &z;   //  x and y cannot be made to point to 
                                  // some other address since x and y are references
     // if you change x and y, p and q will change
 }
