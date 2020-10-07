@@ -12,10 +12,8 @@ int main()
 	arrip[0] = &x;
 	arrip[1] = &y;
 	arrip[2] = &z;
-	int *(*paip)[3] = &arrip;
-	//for(i=0; i< 3; i++)
-	//{
-	//	cout << endl << *arrip[i];
-	//}
+	for(i=0; i< 3; i++)
+	{
+		cout << endl << *arrip[i];
+	}
 }
-
