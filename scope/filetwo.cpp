@@ -2,10 +2,11 @@
 #include <iostream>
 using namespace std;
 
-extern int x;
+int x;
 
 void newfunction()
 {
+	x = 10;
 	x = x + 1;
 	cout << x << endl;
 }

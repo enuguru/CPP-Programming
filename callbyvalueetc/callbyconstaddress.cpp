@@ -8,7 +8,7 @@ void myfunction(int *const x, int *const y)   //  function definition
 {  
   int s,q; s = 56; q = 567;
   *x = 10;   *y = 20;   //  original value can be changed
-  x  =  &s;  y  =  &q;   //  x and y can be made to point to 
+  //x  =  &s;  y  =  &q;   //  x and y can be made to point to 
                                  // some other address
 }
 

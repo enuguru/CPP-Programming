@@ -19,11 +19,3 @@ int main()
     cout << "\n" << "the value of p and q after function call are  " << p << "  and  " << q << "\n";
     return 0;
 }
-
-
-
-
-
-
-
-
