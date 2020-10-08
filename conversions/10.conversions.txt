@@ -1,5 +1,4 @@
 
-
 You can use three techniques in conversion from one data type to another.
 
 1. Conversion functions or typecast operator in the source class

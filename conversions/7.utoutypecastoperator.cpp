@@ -46,6 +46,7 @@ public:
     operator rectangular()             //casting operator function
     {   double x=radius * cos(angle);
         double y=radius * sin(angle);
+	cout << endl << "casting operator function" << endl;
         return rectangular(x,y);
     }  //temporary object
 

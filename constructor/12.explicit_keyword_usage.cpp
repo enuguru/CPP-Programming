@@ -27,4 +27,4 @@ int main()
 	else
 	cout << "Not Same"; 
 	return 0; 
-} 
+}

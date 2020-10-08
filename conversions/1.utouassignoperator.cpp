@@ -6,7 +6,11 @@ class B { };
 
 class A {   
 public:
-       A operator =(B n) { return *this; }
+       A operator =(B n) 
+       { 
+	       cout << endl << "assignment operator called" << endl;
+	       return *this; 
+       }
 };
 
 int main()

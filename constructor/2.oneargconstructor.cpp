@@ -8,11 +8,13 @@ class A
        A(int a):x(a) { cout << "\n" << "one arg constructor" << endl; }
    private:
        int x;
+       int b;
 };
 
 int main()
 {
   int p = 2;
-  A a = p; 
+  A q(p);
+  A a = p;
   return 0;
 }

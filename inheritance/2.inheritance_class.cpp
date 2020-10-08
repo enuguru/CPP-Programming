@@ -10,6 +10,7 @@ class Parent
 { 
 	public: 
 	int id_p; 
+
 }; 
 
 // Sub class inheriting from Base Class(Parent) 
