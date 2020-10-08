@@ -19,8 +19,7 @@ there are four conversion types possible
 
 4. Built in type to Built in type
 
-for c to c (user defined to user deined or class to class) we can any of the three techniques
-given above.
+for c to c (user defined to user deined or class to class) we can use any of the above three techniques
 
 for user defined to built in we can only use typecast operator or conversion function in the
 source class. this is because we cannot touch the destionation class because they are built in
