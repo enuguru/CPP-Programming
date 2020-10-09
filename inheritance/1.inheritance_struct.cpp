@@ -8,8 +8,10 @@ using namespace std;
 //Base class 
 struct Parent 
 { 
+	Parent() { }
 	public: 
 	int id_p; 
+	void newfunc() { }
 }; 
 
 // Sub class inheriting from Base Class(Parent) 
@@ -34,3 +36,5 @@ int main()
 		
 		return 0; 
 } 
+
+

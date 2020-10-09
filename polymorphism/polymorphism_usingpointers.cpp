@@ -79,5 +79,11 @@ int main()
   ptr = new broadband_modem;
   ptr->send_data();
   ptr->receive_data();
+  ptr = new dial_up_modem;
+  ptr->send_data();
+  ptr->receive_data();
+  ptr = new ThreeG_modem;
+  ptr->send_data();
+  ptr->receive_data();
   return 0;
 }    

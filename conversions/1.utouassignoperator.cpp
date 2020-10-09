@@ -6,7 +6,7 @@ class B { };
 
 class A {   
 public:
-       A operator =(B n) 
+       A &operator =(B &n) 
        { 
 	       cout << endl << "assignment operator called" << endl;
 	       return *this; 

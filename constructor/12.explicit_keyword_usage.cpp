@@ -1,3 +1,4 @@
+
 #include <iostream> 
 using namespace std; 
 
@@ -9,7 +10,10 @@ private:
 
 public: 
 	// Default constructor 
-	explicit Complex(double r = 0.0, double i = 0.0) : real(r), imag(i) {} 
+	explicit Complex(double r = 0.0, double i = 0.0) : real(r), imag(i) {
+        
+	cout << endl << "using the one arg constructor for conversion" << endl;	
+	} 
 
 	// A method to compare two Complex numbers 
 	bool operator== (Complex rhs) { 
@@ -17,11 +21,12 @@ public:
 	} 
 }; 
 
+
 int main() 
 { 
 	// a Complex object 
 	Complex com1(3.0, 0.0); 
-
+        
 	if (com1 == 3.0) 
 	cout << "Same"; 
 	else

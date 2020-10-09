@@ -8,7 +8,10 @@ class B
 {
 A obj;
 public:
-    operator A() { return obj; }
+    operator A() { 
+	    cout << endl << "typecast operator in source class is called " << endl;
+	    return obj; 
+    }
     int x;
 };
 

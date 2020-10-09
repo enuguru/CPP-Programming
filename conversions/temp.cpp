@@ -12,12 +12,12 @@ public:
 class A
 {
 public:
-    A() { }
+    //A() { }
 
-    A(A &z) 
-    {
-	cout << endl << "this is a one arg constructor called for initialization" << endl;
-    }
+    //A(A &z) 
+    //{
+//	cout << endl << "this is a one arg constructor called for initialization" << endl;
+ //   }
 
     A(B &y) 
     {
@@ -29,8 +29,8 @@ public:
 int main()
 {
     B p;
-    A q;
-    A s(q);
+    //A q;
+    //A s(q);
     A a = p;
     return 0;
 }
