@@ -5,7 +5,7 @@ using namespace std;
 class A
 {
     public:
-      A operator= (int a) { return *this; }
+      A &operator= (int a) { return *this; }
 };
 
 

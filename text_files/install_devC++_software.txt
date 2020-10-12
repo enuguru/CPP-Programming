@@ -9,5 +9,3 @@ http://seanlaw.github.io/2019/01/17/pip-installing-wheels-with-conda-gcc/
 
 online compiler
 https://www.tutorialspoint.com/compile_cpp_online.php
-
-

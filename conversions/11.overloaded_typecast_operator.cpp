@@ -12,7 +12,7 @@ public:
   // conversion from A (assignment):
   B& operator= (A& x) { cout << endl << "calling assignment operator" << endl; return *this;}
   // conversion to A (type-cast operator)
-  operator A() { A obj; cout << endl << "calling overloaded typecast operator" << endl; return obj;}
+  operator A() { cout << endl << "calling overloaded typecast operator" << endl; return A();}
 };
 
 int main ()

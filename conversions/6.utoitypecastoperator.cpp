@@ -5,7 +5,7 @@ using namespace std;
 class A
 {
 public:
-    operator int() { }
+    operator int() { cout << endl << "overloaded typecast called " << endl; return p;}
 int p,q;
 };
 

@@ -1,0 +1,50 @@
+
+
+
+types of polymorphism
+
+compile time polymorphism  compile time bining
+function overloading
+operator overloading
+
+
+run time polymorphism     run time bining
+dynamic binding
+
+interface polymorphism (in c++)
+
+polymorphism in C - function pointers, cleverly crafted
+                    typedef and if-else statements
+
+same event - different actions (in different contexts)
+different actions / results - poly morphic
+
+same event - same action / result - mono morphic
+mono morphic
+
+
+
+IES - embdded systems, linux, c and c++, automotive, 
+industrial engineering, consumer electronics
+
+Tech - cloud services, amazon cloud, microsoft accounts 
+server maintenance, client server programming 
+
+
+Vodaphone, airtel, ericcson, Nokia, 
+4G networks, 3G networks, wireless telecome
+equipment all of them comer under telecom equipment
+and wireless, bluetooth, WiFi routers, cisco
+wifi and wireless business 
+
+BFSI
+
+DAAI 
+
+Retail and 
+
+
+
+
+
+

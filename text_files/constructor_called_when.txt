@@ -1,0 +1,14 @@
+
+
+
+
+copy constructor is called when
+
+
+an object is created
+
+an object is returnd from a function
+
+an object is copied
+
+an object is passed as an argument to a function
