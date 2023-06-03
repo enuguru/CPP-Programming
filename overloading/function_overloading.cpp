@@ -13,8 +13,8 @@ class printData
         cout << "Printing float: " << f << endl;
       }
 
-      void print(char* c) {
-        cout << "Printing character: " << c << endl;
+      void print(string mystr) {
+        cout << "Printing character: " << mystr << endl;
       }
 };
 

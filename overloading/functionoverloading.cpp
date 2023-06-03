@@ -8,7 +8,7 @@ void print_this(char the_char)
 	cout << the_char << "\n";
 }
 
-void print_this(char* the_C_string)
+void print_this(const char* the_C_string)
 {
 	cout << the_C_string << "\n";
 }

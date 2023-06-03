@@ -11,7 +11,7 @@ class mystring
 	char *p;
 
 public:
-	mystring(char *str = "")
+	mystring(const char *str = "")
 	{
 		p = new char[strlen(str)+1];
 		strcpy(p,str);

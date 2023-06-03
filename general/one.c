@@ -9,5 +9,3 @@ int main()
     int a = (int) (int) 2.5 + 5.8f;
     printf("%ld %d \n",sizeof(a),a);
 }
-
-    

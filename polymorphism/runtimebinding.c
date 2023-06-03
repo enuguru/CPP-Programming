@@ -35,4 +35,3 @@ void myfuncthree(int x)
 {
      printf("this thrid function is called from the index 3 of array of function pointers\n");
 }
-

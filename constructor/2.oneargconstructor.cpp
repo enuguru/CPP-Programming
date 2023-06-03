@@ -5,7 +5,11 @@ using namespace std;
 class A
 {
     public:
-       A(int a):x(a) { cout << "\n" << "one arg constructor" << endl; }
+       A(int a):x(a) 
+       { 
+	       cout << "\n" << "one arg constructor" << endl; 
+	       cout << a << endl;
+       }
    private:
        int x;
        int b;

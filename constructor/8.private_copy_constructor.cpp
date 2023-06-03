@@ -1,3 +1,4 @@
+
 #include <iostream> 
 using namespace std; 
 
@@ -8,7 +9,9 @@ public:
 private: 
 
 	Base() { cout << endl << "no arg constructor" << endl; } 
+
 	Base(int y): x(y) { cout << endl << "one arg constructor" << endl; } 
+
 	// Copy constructor 
 	Base(const Base& obj) : x(obj.x) { } 
 

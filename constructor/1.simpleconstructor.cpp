@@ -24,6 +24,7 @@ class sampleclass
     sampleclass &operator=(sampleclass &)
     {
        cout << "\n" << "this is the copy assignment operator getting called" << "\n";
+       return *this;
     }
 };
 

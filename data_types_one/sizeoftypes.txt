@@ -1,0 +1,5 @@
+CPU             short   int
+8 bit           16      16
+16 bit          16      16
+32 bit          16      32
+64 bit          16      32
